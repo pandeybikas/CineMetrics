@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     "rest_framework",
-    'cinema_apis'
+    'cinema_apis',
+    'dashboards_apis'
 ]
 
 MIDDLEWARE = [
