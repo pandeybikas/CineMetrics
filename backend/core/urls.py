@@ -18,5 +18,6 @@ from django.contrib import admin
 from django.urls import path,include
 
 urlpatterns = [
-    path('api/', include('cinema_apis.urls'))
+    path('api/', include('cinema_apis.urls')),
+    path('dashboard/api/', include('dashboards_apis.urls'))
 ]

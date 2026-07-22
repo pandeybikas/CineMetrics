@@ -1,0 +1,89 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "npm"
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "dashboard": {
+      "projectType": "application",
+<<<<<<< HEAD
+      "schematics": {},
+=======
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+>>>>>>> aec07ea73961790d85e1fa777ecae8e988c86af8
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/main.ts",
+            "tsConfig": "tsconfig.app.json",
+<<<<<<< HEAD
+=======
+            "inlineStyleLanguage": "scss",
+>>>>>>> aec07ea73961790d85e1fa777ecae8e988c86af8
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+<<<<<<< HEAD
+              "src/styles.css"
+=======
+              "src/styles.scss"
+>>>>>>> aec07ea73961790d85e1fa777ecae8e988c86af8
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "dashboard:build:production"
+            },
+            "development": {
+              "buildTarget": "dashboard:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    }
+  }
+}
