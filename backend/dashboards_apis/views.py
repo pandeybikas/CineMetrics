@@ -14,7 +14,7 @@ class DashboardApi(APIView):
         return self.executive_dashboard(request)
     
     def executive_dashboard(self, request):
-        year= self.request.query_params("year")
+        year= request.query_params.get("year")
         if year is None or '':
             return Response(
                 {
@@ -23,4 +23,19 @@ class DashboardApi(APIView):
                 }, status=status.HTTP_200_OK
             )
         executive_df= self.service_layer.get_executive_dashboard_data(year=year)
+        movies_df= executive_df.copy()
+        numeric_columns= ["budget", "revenue", "runtime", "popularity", "vote_average", "vote_count"]
+        for column in numeric_columns:
+            movies_df[column]= pd.to_numeric(movies_df[column], errors="coerce")
+        movies_df["release_date"]= pd.to_datetime(movies_df["release_date"], errors="coerce")
+        movies_df= movies_df.drop_duplicates(subset=["id"], keep="last")
+        res= movies_df.to_dict(orient='records')
+        return Response(
+            {
+                "message": "success",
+                "data": res,
+
+
+            }, status=status.HTTP_200_OK
+        )
         

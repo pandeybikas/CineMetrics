@@ -50,7 +50,7 @@ class DatabaseQueryResult(DatabaseConnection):
                 """
         params=[]
         if year is not None:
-            query = """where extract(YEAR from release_date)=%s"""
+            query += f"""where extract(YEAR from release_date)=%s"""
             params.append(year)
 
         return self.execute_query(query, params=params)
