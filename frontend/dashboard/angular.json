@@ -8,7 +8,15 @@
   "projects": {
     "dashboard": {
       "projectType": "application",
+<<<<<<< HEAD
       "schematics": {},
+=======
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+>>>>>>> aec07ea73961790d85e1fa777ecae8e988c86af8
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -18,6 +26,10 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
+<<<<<<< HEAD
+=======
+            "inlineStyleLanguage": "scss",
+>>>>>>> aec07ea73961790d85e1fa777ecae8e988c86af8
             "assets": [
               {
                 "glob": "**/*",
@@ -25,7 +37,11 @@
               }
             ],
             "styles": [
+<<<<<<< HEAD
               "src/styles.css"
+=======
+              "src/styles.scss"
+>>>>>>> aec07ea73961790d85e1fa777ecae8e988c86af8
             ]
           },
           "configurations": {
