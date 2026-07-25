@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from . import views
 
 urlpatterns = [
     path('api/', include('cinema_apis.urls')),
-    path('dashboard/api/', include('dashboards_apis.urls'))
+    path('dashboard/api/', include('dashboards_apis.urls')),
+    path('api/health/live', views.healthcheck, name='healthcheck')
 ]

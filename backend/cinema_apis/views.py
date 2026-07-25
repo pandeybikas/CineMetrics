@@ -19,6 +19,7 @@ class MovieApi(APIView):
         for the supplied year.
         """
            year= request.query_params.get("year")
+           
            try:
                 movies_df= self.service_layer.get_top_5_movies(year=year)
                 if movies_df.empty:
