@@ -1,3 +1,22 @@
 
-/cinema_env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+cinema_env/
+.venv/
+venv/
+
+# Environment variables
 .env
+.env.*
+!.env.example
+/cinema_env
+
+# IDE and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
