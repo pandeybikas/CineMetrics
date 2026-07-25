@@ -5,7 +5,6 @@
 # =========================================================
 FROM node:22-alpine AS builder
 
-ENV NODE_ENV=production
 
 WORKDIR /app
 
